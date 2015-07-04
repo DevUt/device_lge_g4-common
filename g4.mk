@@ -295,6 +295,10 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti \
     power.msm8992
 
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.g4
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0-impl \
