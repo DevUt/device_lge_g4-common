@@ -297,7 +297,13 @@ PRODUCT_PACKAGES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.g4
+    power.g4 \
+    android.hardware.power@1.0-impl \
+
+ifeq ($(ENABLE_TREBLE), true)
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-service
+endif
 
 # RIL
 PRODUCT_PACKAGES += \
