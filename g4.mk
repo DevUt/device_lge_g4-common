@@ -74,7 +74,9 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     libqomx_core \
-    Camera2
+    Camera2 \
+    libmm-qcamera \
+    camera.msm8992
 
 # rootless torch tile workaround
 PRODUCT_PACKAGES += \
