@@ -269,6 +269,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Enable StagefrightCodec 2.0
+PRODUCT_PACKAGES += \
+    libstagefright_ccodec
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
