@@ -78,7 +78,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=560 \
     qemu.hw.mainkeys=0 \
-    ro.qualcomm.cabl=2
+    ro.qualcomm.cabl=2 \
+    ro.surface_flinger.use_color_management=true
 
 # Properties to improve rendering
     debug.enable.sglscale=1 \
@@ -90,7 +91,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=1 \
     persist.hwc.ptor.enable=true \
     debug.cpurend.vsync=false
-    
+
 # MSM8992 HAL settings
 # 196610 is decimal for 0x30002 to report major/minor versions as 3/2
 PRODUCT_PROPERTY_OVERRIDES += \
