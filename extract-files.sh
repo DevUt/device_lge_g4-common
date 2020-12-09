@@ -60,9 +60,4 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 
 extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 
-LIBMMJPEG="$CM_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libmmjpeg.so
-
-sed -i "s|QCOM-AA|Nextbit|g" "$LIBMMJPEG"
-sed -i "s|QCAM-AA|Robin\x0\x0|g" "$LIBMMJPEG"
-
 "$MY_DIR"/setup-makefiles.sh
