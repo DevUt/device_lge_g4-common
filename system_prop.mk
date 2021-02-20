@@ -148,6 +148,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false \
     ro.config.avoid_gfx_accel=true
 
+# Media: Faster streaming videos
+PRODUCT_PROPERTY_OVERRIDES += \
+media.stagefright.enable-player=true \
+media.stagefright.enable-meta=true \
+media.stagefright.enable-scan=true \
+media.stagefright.enable-http=true \
+media.stagefright.enable-rtsp=true \
+media.stagefright.enable-record=false
+
 # Memory Optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bg_apps_limit=10 \
