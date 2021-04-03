@@ -164,7 +164,7 @@ static void camera2_set_callbacks(struct camera_device *device,
         return;
 
     ALOGI("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
-            (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
+            (uintptr_t)(((wrapper_camera2_device_t*)device)->vendor));
 
     sNotifCb = notify_cb;
     VENDOR_CALL(device, set_callbacks, notify_intercept, data_cb, data_cb_timestamp,
@@ -218,7 +218,7 @@ static void camera2_stop_preview(struct camera_device *device)
         return;
 
     ALOGI("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
-            (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
+            (uintptr_t)(((wrapper_camera2_device_t*)device)->vendor));
 
     previewRunning = false;
     VENDOR_CALL(device, stop_preview);
@@ -294,7 +294,7 @@ static int camera2_auto_focus(struct camera_device * device)
         return -EINVAL;
 
     ALOGI("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
-            (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
+            (uintptr_t)(((wrapper_camera2_device_t*)device)->vendor));
 
     if (activeFocusMove) {
        ALOGI("FORCED FOCUS MOVE STOP");
@@ -311,7 +311,7 @@ static int camera2_cancel_auto_focus(struct camera_device * device)
         return -EINVAL;
 
     ALOGI("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
-            (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
+            (uintptr_t)(((wrapper_camera2_device_t*)device)->vendor));
 
     return VENDOR_CALL(device, cancel_auto_focus);
 }
@@ -409,7 +409,7 @@ static int camera2_dump(struct camera_device * device, int fd)
 static int camera2_device_close(hw_device_t* device)
 {
     int ret = 0;
-    wrapper_camera_device_t *wrapper_dev = NULL;
+    wrapper_camera2_device_t *wrapper_dev = NULL;
 
     ALOGI("In camera _device_close now, %s", __FUNCTION__);
 
@@ -420,7 +420,7 @@ static int camera2_device_close(hw_device_t* device)
         goto done;
     }
 
-    wrapper_dev = (wrapper_camera_device_t*) device;
+    wrapper_dev = (wrapper_camera2_device_t*) device;
 
     wrapper_dev->vendor->common.close((hw_device_t*)wrapper_dev->vendor);
     if (wrapper_dev->base.ops)
