@@ -199,7 +199,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Zygote preforking
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
-
-#Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
