@@ -109,7 +109,7 @@ static int camera3_process_capture_request(const camera3_device_t *device, camer
 
     return VENDOR_CALL(device, process_capture_request, request);
 }
-
+/*
 static void camera3_get_metadata_vendor_tag_ops(const camera3_device *device, vendor_tag_query_ops_t* ops)
 {
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
@@ -121,6 +121,7 @@ static void camera3_get_metadata_vendor_tag_ops(const camera3_device *device, ve
     VENDOR_CALL(device, get_metadata_vendor_tag_ops, ops);
 }
 
+*/
 static void camera3_dump(const camera3_device_t *device, int fd)
 {
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
@@ -242,7 +243,7 @@ int camera3_device_open(const hw_module_t *module, const char *name,
         camera3_ops->register_stream_buffers = NULL;
         camera3_ops->construct_default_request_settings = camera3_construct_default_request_settings;
         camera3_ops->process_capture_request = camera3_process_capture_request;
-        camera3_ops->get_metadata_vendor_tag_ops = camera3_get_metadata_vendor_tag_ops;
+        camera3_ops->get_metadata_vendor_tag_ops = NULL;
         camera3_ops->dump = camera3_dump;
         camera3_ops->flush = camera3_flush;
 
