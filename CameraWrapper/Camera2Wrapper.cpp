@@ -134,7 +134,9 @@ static int camera2_set_preview_window(struct camera_device * device,
     return VENDOR_CALL(device, set_preview_window, window);
 }
 
-atomic_int BlockCbs;
+static bool previewRunning = false;
+static bool activeFocusMove = false;
+static camera_notify_callback sNotifCb;
 
 static void notify_intercept(int32_t msg, int32_t b, int32_t c, void *cookie) {
     ALOGI("In notify_intercept now");
