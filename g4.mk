@@ -85,7 +85,8 @@ PRODUCT_PACKAGES += \
     Camera2 \
     libmm-qcamera \
     camera.msm8992 \ 
-    camera.vendor.msm8992
+    camera.vendor.msm8992 \
+    devut-cap
 
 # rootless torch tile workaround
 PRODUCT_PACKAGES += \
