@@ -4,6 +4,9 @@
 #include <sys/ioctl.h>
 #include <utils/Log.h>
 
+#define LOG_TAG "DevCap"
+#define LOG_NDEBUG 0
+
 extern int errno;
 int main(){
     struct v4l2_capability cap;
