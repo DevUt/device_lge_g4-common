@@ -949,12 +949,6 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     setenv LD_PRELOAD "libshim_mutexdestroy.so"
     writepid /dev/cpuset/system-background/tasks
 
-service devsvr /vendor/bin/devut-cap
-    class late_start
-    user camera
-    disabled
-    group camera system inet input graphics
-
 service laserinit /vendor/bin/laser_init
     class late_start
     user root
