@@ -1285,7 +1285,21 @@ int QCamera2HardwareInterface::openCamera()
     }
     if (NULL == gCamCaps[mCameraId]){
         //initCapabilities(mCameraId,mCameraHandle);
-        DevUtCapabilities(mCameraId,mCameraHandle);
+        // DevUtCapabilities(mCameraId,mCameraHandle);
+        char bootc[PROPERTY_VALUE_MAX];
+        property_get("sys.boot_completed", bootc, "0");
+        int bootr = atoi(bootc);
+
+        if(bootc == 1){//Yeah I know
+            ALOGI("initCapabilities");
+            initCapabilities(mCameraId,mCameraHandle);
+        }
+        else{
+            ALOGI("DevUtCapabilities");
+            DevUtCapabilities(mCameraId,mCameraHandle);
+        }
+    }else{
+        ALOGI("gCamCaps[%d] already set",mCameraId);
     }
 
     mCameraHandle->ops->register_event_notify(mCameraHandle->camera_handle,
