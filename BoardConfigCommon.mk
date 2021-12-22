@@ -205,7 +205,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libril-qc-qmi-1.so|/system/vendor/lib64/rild_socket.so \
     /system/lib64/libmdmcutback.so|libqsap_shim.so \
     /system/vendor/lib/hw/camera.msm8992.so|/system/vendor/lib/libfence_shim.so \
-    /system/vendor/lib64/lib-rtpcore.so|/system/vendor/lib64/ims_rtp_shim.so
+    /system/vendor/lib64/lib-rtpcore.so|/system/vendor/lib64/ims_rtp_shim.so \
+    /system/lib/libc.so|/system/vendor/lib/libpthread_shim.so
 
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true

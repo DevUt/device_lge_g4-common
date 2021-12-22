@@ -125,7 +125,6 @@ on init
     chown media media /dev/soundtrigger_dma_drv
 
     #R/O fs: symlink /sdcard /storage/sdcard0
-    export LD_PRELOAD /system/vendor/lib/libpthread_shim.so
 
 on early-boot
     # unique boot led blinking
