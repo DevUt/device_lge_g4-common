@@ -88,9 +88,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /vendor/bin/mm-qcamera-daemon=24 \
-    /system/bin/cameraserver=24 \
-    /system/bin/mediaserver=24
+    /vendor/bin/mm-qcamera-daemon=24
 
 # Display
 TARGET_USES_ION := true
@@ -206,7 +204,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libcneapiclient.so|/system/vendor/lib64/libcne_shim.so \
     /system/vendor/lib64/libril-qc-qmi-1.so|/system/vendor/lib64/rild_socket.so \
     /system/lib64/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib/hw/camera.vendor.msm8992.so|/system/vendor/lib/libfence_shim.so \
+    /system/vendor/lib/hw/camera.msm8992.so|/system/vendor/lib/libfence_shim.so \
     /system/vendor/lib64/lib-rtpcore.so|/system/vendor/lib64/ims_rtp_shim.so
 
 # Thermal
