@@ -3,8 +3,8 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
 	CameraWrapper.cpp \
-	CameraWrapper2.cpp \
-	CameraWrapper3.cpp
+	Camera2Wrapper.cpp \
+	Camera3Wrapper.cpp
 
 LOCAL_SHARED_LIBRARIES := \
     liblog \
