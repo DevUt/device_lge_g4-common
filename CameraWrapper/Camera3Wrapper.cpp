@@ -77,16 +77,17 @@ static int camera3_configure_streams(const camera3_device *device, camera3_strea
     return VENDOR_CALL(device, configure_streams, stream_list);
 }
 
-static int camera3_register_stream_buffers(const camera3_device *device, const camera3_stream_buffer_set_t *buffer_set)
-{
-    ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
-        (uintptr_t)(((wrapper_camera3_device_t*)device)->vendor));
+// To silent Compilation warnings
+// static int camera3_register_stream_buffers(const camera3_device *device, const camera3_stream_buffer_set_t *buffer_set)
+// {
+//     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
+//         (uintptr_t)(((wrapper_camera3_device_t*)device)->vendor));
 
-    if (!device)
-        return -1;
+//     if (!device)
+//         return -1;
 
-    return VENDOR_CALL(device, register_stream_buffers, buffer_set);
-}
+//     return VENDOR_CALL(device, register_stream_buffers, buffer_set);
+// }
 
 static const camera_metadata_t *camera3_construct_default_request_settings(const camera3_device_t *device, int type)
 {
